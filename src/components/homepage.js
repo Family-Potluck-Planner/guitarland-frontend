@@ -15,7 +15,7 @@ const HomePage = () => {
     }
     return(
         <div>
-            <h1>Hello Fam</h1>
+            <h1>Guitarland</h1>
             <button onClick = { handleLogin }> Login </button>
             <button onClick = { handleSignup }> Sign Up</button>
         </div>

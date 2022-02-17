@@ -3,7 +3,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import HomePage from './components/homepage';
 import Login from './components/login';
 import SignUp from './components/signup';
-import Events from './components/events';
+import GuitarList from './components/guitarlist';
 
 function App() {
   return (
@@ -12,13 +12,13 @@ function App() {
         <Link to = '/'> Home </Link>
         <Link to = '/login'> Login </Link>
         <Link to = '/signup'> SignUp </Link>
-        <Link to = '/events'> Events </Link>
+        <Link to = '/guitars'> Guitars </Link>
       </nav>
       <Routes>
         <Route path = '/' element = {<HomePage />} />
         <Route exact path = '/login' element = {<Login />} />
         <Route exact path = '/signup' element = {<SignUp />} />
-        <Route exact path = '/events' element = { <Events /> } />
+        <Route exact path = '/guitars' element = { <GuitarList /> } />
       </Routes>
     </div>
   );
