@@ -1,33 +1,52 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const AddGuitar = () => {
+
+    const [ state, setState ] = useState()
+
+    const handleChange = (e) => {
+        setState({
+            ...state,
+            [e.target.name]: e.target.value
+        })
+    }
+    const handleSubmit = () => {
+        
+    }
+
     return(
         <div>
-            <form>
+            <h1> Add Your Guitar! </h1>
+            <form onSubmit = { handleSubmit }>
                 <label> Brand
                     <input
+                        name = 'brand'
                         placeholder = 'enter brand'
-                        onChange = { handelChange }
+                        onChange = { handleChange }
                     />
                 </label>
                 <label> Model
                     <input
+                        name = 'model'
                         placeholder = 'enter model'
-                        onChange = { handelChange }
+                        onChange = { handleChange }
                     />
                 </label>
                 <label> Year
                     <input
+                        name = 'year'
                         placeholder = 'enter year'
-                        onChange = { handelChange }
+                        onChange = { handleChange }
                     />
                 </label>
                 <label> Name
                     <input
+                        name = 'name'
                         placeholder = 'Does your guitar have a name?'
-                        onChange = { handelChange }
+                        onChange = { handleChange }
                     />
                 </label>
+                <button> Submit </button>
             </form>
         </div>
     )
