@@ -5,7 +5,7 @@ const initialCreds = {
     password: '',
 }
 
-const Register = () => {
+const SignUp = () => {
     const [ creds, setCreds ] = useState(initialCreds)
 
     const handleChange = (e) => {
@@ -21,7 +21,7 @@ const Register = () => {
 
     return(
         <div>
-            <h1> Register </h1>
+            <h1> SignUp </h1>
             <form onSubmit = {handleSubmit}>
                 <label> Username 
                     <input 
@@ -42,4 +42,4 @@ const Register = () => {
         </div>
     )
 }
-export default Register;
+export default SignUp;
