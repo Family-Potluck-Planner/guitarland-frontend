@@ -4,16 +4,16 @@ import './index.css';
 import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import {ThemeProvider} from 'styled-components';
-import theme from '../theme'
+import theme from './theme'
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme = {theme}>
-      <Router>
+    <Router>
+      <ThemeProvider theme = {theme}>
         <App />
-      </Router>
-    </ThemeProvider>
+      </ThemeProvider>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
