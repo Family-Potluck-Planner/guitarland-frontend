@@ -5,6 +5,7 @@ import Login from './components/login';
 import SignUp from './components/signup';
 import GuitarList from './components/guitarlist';
 import AddGuitar from './components/add';
+import PrivateRoute from './components/privateRoute';
 
 function App() {
   return (
@@ -19,8 +20,8 @@ function App() {
         <Route path = '/' element = {<HomePage />} />
         <Route exact path = '/login' element = {<Login />} />
         <Route exact path = '/signup' element = {<SignUp />} />
-        <Route exact path = '/guitars' element = { <GuitarList /> } />
-        <Route exact path = '/guitars/add' element = { <AddGuitar /> } />
+        <PrivateRoute exact path = '/guitars' element = { <GuitarList /> } />
+        <PrivateRoute exact path = '/guitars/add' element = { <AddGuitar /> } />
       </Routes>
     </div>
   );
