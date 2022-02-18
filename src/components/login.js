@@ -16,7 +16,15 @@ const Login = () => {
     }
 
     const handleSubmit = (e) => {
-        
+        e.preventDefault();
+        axios.post('https://guitarlandia.herokuapp.com/api/auth/login', creds)
+        .then(res => {
+            localStorage.setItem('token', res.data.token)
+            navigate('/guitars')
+        })
+        .catch(err =>{
+            console.log(err)
+        })
     }
 
     return(

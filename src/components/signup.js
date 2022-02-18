@@ -1,22 +1,34 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-const initialCreds = {
+const initialUser = {
     username: '',
     password: '',
 }
 
 const SignUp = () => {
-    const [ creds, setCreds ] = useState(initialCreds)
+    const [ user, setUser ] = useState(initialUser)
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         setCreds({
-            ...creds,
+            ...user,
             [e.target.name]: e.target.value
         })
     }
 
-    const handleSubmit = () => {
-
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        axios.post('https://guitarlandia.herokuapp.com/api/auth/signup', user)
+        .then(res => {
+            setUser(initialUser)
+            navigate('/login')
+        })
+        .catch(err =>{
+            console.log(err)
+        })
+        
     }
 
     return(
