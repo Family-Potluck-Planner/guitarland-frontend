@@ -1,17 +1,50 @@
 import React, {useState} from 'react';
+import axios from 'axios';
+import { useHistory } from 'react-router-dom';
+import axiosWithAuth from '../axiosWithAuth'
+
+const initialFormValues = {
+    brand: '',
+    model: '',
+    year: '',
+    name: '',
+}
 
 const AddGuitar = () => {
 
-    const [ state, setState ] = useState()
+    const [ formValues, setFormValues ] = useState(initialFormValues)
+    const { push } = useHistory();
 
-    const handleChange = (e) => {
-        setState({
-            ...state,
-            [e.target.name]: e.target.value
+    const postNewGuitar = newGuitar => {
+        axiosWithAuth.post('https://guitarlandia.herokuapp.com/api/guitars', newGuitar)
+        .then(res => {
+            push('/guitars');
+        })
+        .catch(err => {
+            console.log(err);
         })
     }
-    const handleSubmit = () => {
-        
+
+    const handleChange = (e) => {
+        setFormValues({
+            ...formValues,
+            [e.target.name]: e.target.value
+        })
+    } 
+
+    const submitGuitar = () => {
+        const newGuitar = {
+            brand: formValues.brand,
+            model: formValues.model,
+            year: formValues.year,
+            name: formValues.name,
+        }
+        postNewGuitar(newGuitar)
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        submitGuitar()
+      
     }
 
     return(
@@ -42,7 +75,7 @@ const AddGuitar = () => {
                 <label> Name
                     <input
                         name = 'name'
-                        placeholder = 'Does your guitar have a name?'
+                        placeholder = 'Name of your guitar'
                         onChange = { handleChange }
                     />
                 </label>
