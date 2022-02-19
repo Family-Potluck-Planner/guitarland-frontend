@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import axiosWithAuth from '../axiosWithAuth'
 
@@ -15,8 +14,8 @@ const AddGuitar = () => {
     const [ formValues, setFormValues ] = useState(initialFormValues)
     const { push } = useHistory();
 
-    const postNewGuitar = newGuitar => {
-        axiosWithAuth.post('https://guitarlandia.herokuapp.com/api/guitars', newGuitar)
+    const postNewGuitar = (newGuitar) => {
+        axiosWithAuth().post('https://guitarlandia.herokuapp.com/api/guitars', newGuitar)
         .then(res => {
             push('/guitars');
         })
@@ -31,6 +30,7 @@ const AddGuitar = () => {
             [e.target.name]: e.target.value
         })
     } 
+    console.log(formValues)
 
     const submitGuitar = () => {
         const newGuitar = {
