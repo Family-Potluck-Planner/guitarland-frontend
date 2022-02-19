@@ -12,11 +12,12 @@ const SignUp = () => {
     const navigate = useNavigate();
 
     const handleChange = (e) => {
-        setCreds({
+        setUser({
             ...user,
             [e.target.name]: e.target.value
         })
     }
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -26,7 +27,7 @@ const SignUp = () => {
             navigate('/login')
         })
         .catch(err =>{
-            console.log(err)
+            console.error(err)
         })
         
     }
