@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const initialCreds = {
     username: '',
@@ -9,7 +9,8 @@ const initialCreds = {
 
 const Login = () => {
     const [ creds, setCreds ] = useState(initialCreds)
-    const navigate = useNavigate();
+    const { push } = useHistory()
+    
 
     const handleChange = (e) => {
         setCreds({
@@ -23,7 +24,7 @@ const Login = () => {
         axios.post('https://guitarlandia.herokuapp.com/api/auth/login', creds)
         .then(res => {
             localStorage.setItem('token', res.data.token)
-            navigate('/guitars')
+            push('/guitars')
         })
         .catch(err =>{
             console.log(err)

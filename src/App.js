@@ -11,7 +11,8 @@ import Logout from './components/logout';
 
 function App() {
 
-  const [ user, setUser ] = useState(null)
+  
+
   return (
     <div className="App">
       <nav>
@@ -22,12 +23,12 @@ function App() {
         <Link to = '/logout'> Logout </Link>
       </nav>
       <Routes>
-        <Route path = '/' element = {<HomePage />} />
-        <Route exact path = '/login' element = {<Login />} />
-        <Route exact path = '/signup' element = {<SignUp />} />
-        <Route exact path = '/guitars' element = { <PrivateRoute user= {user}> <GuitarList /> </PrivateRoute>} />
-        <Route exact path = '/guitars/add' element = { <AddGuitar /> } />
-        <Route path = '/logout' element = {<Logout />} />
+        <Route path = '/' component = {<HomePage />} />
+        <Route exact path = '/login' component = {<Login />} />
+        <Route exact path = '/signup' component = {<SignUp />} />
+        <Route exact path = '/guitars' component = { <PrivateRoute> <GuitarList /> </PrivateRoute>} />
+        <Route exact path = '/guitars/add' component = { <AddGuitar /> } />
+        <Route path = '/logout' component = {<Logout />} />
       </Routes>
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const initialUser = {
     username: '',
@@ -9,7 +9,7 @@ const initialUser = {
 
 const SignUp = () => {
     const [ user, setUser ] = useState(initialUser)
-    const navigate = useNavigate();
+    const { push } = useHistory();
 
     const handleChange = (e) => {
         setUser({
@@ -24,7 +24,7 @@ const SignUp = () => {
         axios.post('https://guitarlandia.herokuapp.com/api/auth/signup', user)
         .then(res => {
             setUser(initialUser)
-            navigate('/login')
+            push('/login')
         })
         .catch(err =>{
             console.error(err)

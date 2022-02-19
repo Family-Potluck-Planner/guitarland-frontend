@@ -1,13 +1,13 @@
 
 import React,{useEffect}  from "react";
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const Logout = ()=> {
-    const navigate = useNavigate()
+    const { push } = useHistory()
     useEffect(() =>{
         const token = localStorage.getItem("token")
         localStorage.removeItem('token')
-        navigate('/login')
+        push('/login')
         window.location.reload()
     }, [])
     
