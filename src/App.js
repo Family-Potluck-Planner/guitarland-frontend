@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import HomePage from './components/homepage';
 import Login from './components/login';
 import SignUp from './components/signup';
@@ -22,14 +22,14 @@ function App() {
         <Link to = '/guitars'> Guitars </Link>
         <Link to = '/logout'> Logout </Link>
       </nav>
-      <Routes>
-        <Route path = '/' component = {<HomePage />} />
-        <Route exact path = '/login' component = {<Login />} />
-        <Route exact path = '/signup' component = {<SignUp />} />
-        <Route exact path = '/guitars' component = { <PrivateRoute> <GuitarList /> </PrivateRoute>} />
-        <Route exact path = '/guitars/add' component = { <AddGuitar /> } />
-        <Route path = '/logout' component = {<Logout />} />
-      </Routes>
+
+        <Route exact path = '/' component = {HomePage} />
+        <Route exact path = '/login' component = {Login} />
+        <Route exact path = '/signup' component = {SignUp} />
+        <PrivateRoute exact path = '/guitars' component = {GuitarList} />
+        <PrivateRoute exact path = '/guitars/add' component = {AddGuitar} />
+        <PrivateRoute exact path = '/logout' component = {Logout} />
+
     </div>
   );
 }

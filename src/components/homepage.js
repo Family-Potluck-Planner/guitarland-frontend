@@ -1,16 +1,16 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const HomePage = () => {
     
-    let navigate = useNavigate()
+    let { push }= useHistory()
 
     const handleLogin = (e) => {
-        navigate('/login')
+        push('/login')
     }
 
     const handleSignup = (e) => {
-        navigate('/signup')
+        push('/signup')
 
     }
     return(

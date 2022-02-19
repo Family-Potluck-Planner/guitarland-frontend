@@ -1,11 +1,11 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const GuitarList = () => {
-    const navigate = useNavigate()
+    const { push }= useHistory()
 
     const handleClick = () => {
-        navigate('/guitars/add')
+        push('/guitars/add')
     }
     return(
         <div>
