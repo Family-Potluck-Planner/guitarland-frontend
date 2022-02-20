@@ -30,8 +30,6 @@ const AddGuitar = () => {
             [e.target.name]: e.target.value
         })
     } 
-    console.log(formValues)
-
     const submitGuitar = () => {
         const newGuitar = {
             brand: formValues.brand,
