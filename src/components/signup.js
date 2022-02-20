@@ -24,7 +24,7 @@ const SignUp = () => {
         axios.post('https://guitarlandia.herokuapp.com/api/auth/register', user)
         .then(res => {
             setUser(initialUser)
-            push('/login')
+            push('/')
         })
         .catch(err =>{
             console.error(err)
