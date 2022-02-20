@@ -8,9 +8,8 @@ const Guitar = (props) => {
 
     useEffect(() => {
         if (guitar_id) { 
-            axiosWithAuth().get(`/items/${guitar_id}`)
+            axiosWithAuth().get(`/guitar/${guitar_id}`)
             .then(res => {
-                console.log(res.data)
                 setGuitar(res.data.guitar)
             })
             .catch(err => {
