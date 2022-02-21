@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { useHistory } from 'react-router-dom';
 import axiosWithAuth from '../axiosWithAuth'
-
+import styled from 'styled-components';
 const initialFormValues = {
     brand: '',
     model: '',
@@ -46,9 +46,9 @@ const AddGuitar = () => {
     }
 
     return(
-        <div>
+        <Div>
             <h1> Add Your Guitar! </h1>
-            <form onSubmit = { handleSubmit }>
+            <FormDiv onSubmit = { handleSubmit }>
                 <label> Brand
                     <input
                         name = 'brand'
@@ -78,8 +78,22 @@ const AddGuitar = () => {
                     />
                 </label>
                 <button> Submit </button>
-            </form>
-        </div>
+            </FormDiv>
+        </Div>
     )
 }
 export default AddGuitar;
+
+const Div = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+`
+const FormDiv= styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
