@@ -8,20 +8,21 @@ import GuitarList from './components/guitarlist';
 import AddGuitar from './components/add';
 import PrivateRoute from './components/privateRoute';
 import Logout from './components/logout';
+import styled from 'styled-components';
 
 function App() {
   
   
 
   return (
-    <div className="App">
-      <nav>
-        <Link to = '/'> Home </Link>
-        <Link to = '/login'> Login </Link>
-        <Link to = '/signup'> SignUp </Link>
-        <Link to = '/guitars'> Guitars </Link>
-        <Link to = '/logout'> Logout </Link>
-      </nav>
+    <AppDiv className="App">
+      <StyledNavContainer>
+        <StyledLink to = '/'> Home </StyledLink>
+        <StyledLink to = '/login'> Login </StyledLink>
+        <StyledLink to = '/signup'> Signup </StyledLink>
+        <StyledLink to = '/guitars'> Guitars </StyledLink>
+        <StyledLink to = '/logout'> Logout </StyledLink>
+      </StyledNavContainer>
 
         <Route exact path = '/' component = {HomePage} />
         <Route exact path = '/login' component = {Login} />
@@ -30,8 +31,26 @@ function App() {
         <PrivateRoute exact path = '/guitars/add' component = {AddGuitar} />
         <PrivateRoute exact path = '/logout' component = {Logout} />
 
-    </div>
+    </AppDiv>
   );
 }
 
 export default App;
+
+const AppDiv = styled.div`
+  background-color: ${pr => pr.theme.primaryColor};
+  height: 100vh;
+  color: white;
+`
+
+const StyledNavContainer = styled.nav`
+  padding: 1rem;
+  border-bottom: 1px solid white;
+  background-color: black;
+
+`
+const StyledLink = styled(Link)`
+  color: white;
+  padding: 1rem;
+  text-decoration: none;
+`

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import styled from 'styled-components';
 
 const initialCreds = {
     username: '',
@@ -32,9 +33,9 @@ const Login = () => {
     }
 
     return(
-        <div>
+        <Div>
             <h1> Login </h1>
-            <form onSubmit = { handleSubmit }>
+            <FormDiv onSubmit = { handleSubmit }>
                 <label> Username 
                     <input 
                         name = 'username'
@@ -50,9 +51,23 @@ const Login = () => {
                     />
                 </label>
                 <button> Submit </button>
-            </form>
-        </div>
+            </FormDiv>
+        </Div>
     )
 }
 
 export default Login;
+
+const Div = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+`
+const FormDiv= styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`

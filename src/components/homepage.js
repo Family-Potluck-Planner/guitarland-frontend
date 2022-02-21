@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import styled from 'styled-components';
 
 const HomePage = () => {
     
@@ -14,13 +15,22 @@ const HomePage = () => {
 
     }
     return(
-        <div>
-            <h1>Guitarland</h1>
-            <button onClick = { handleLogin }> Login </button>
-            <button onClick = { handleSignup }> Sign Up</button>
-        </div>
+        <Div>
+            <h1> Guitarlandia </h1>
+            <StyledButton onClick = { handleLogin }> Login </StyledButton>
+            <StyledButton onClick = { handleSignup }> Sign Up</StyledButton>
+        </Div>
 
     )
 }
 
 export default HomePage;
+
+const StyledButton = styled.button`
+    margin: 1rem;
+    padding: .5rem 1rem;
+`
+const Div = styled.div`
+    margin: 5rem;
+
+`
