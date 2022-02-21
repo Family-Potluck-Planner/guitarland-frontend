@@ -48,37 +48,37 @@ const AddGuitar = () => {
     return(
         <Div>
             <h1> Add Your Guitar! </h1>
-            <FormDiv onSubmit = { handleSubmit }>
-                <label> Brand
-                    <input
+            <FormDiv>
+                <Label> Brand
+                    <StyledInput
                         name = 'brand'
                         placeholder = 'enter brand'
                         onChange = { handleChange }
                     />
-                </label>
-                <label> Model
-                    <input
+                </Label>
+                <Label> Model
+                    <StyledInput
                         name = 'model'
                         placeholder = 'enter model'
                         onChange = { handleChange }
                     />
-                </label>
-                <label> Year
-                    <input
+                </Label>
+                <Label> Year
+                    <StyledInput
                         name = 'year'
                         placeholder = 'enter year'
                         onChange = { handleChange }
                     />
-                </label>
-                <label> Name
-                    <input
+                </Label>
+                <Label> Name
+                    <StyledInput
                         name = 'name'
                         placeholder = 'Name of your guitar'
                         onChange = { handleChange }
                     />
-                </label>
-                <button> Submit </button>
+                </Label>
             </FormDiv>
+            <StyledButton onClick = { handleSubmit }> Submit </StyledButton>
         </Div>
     )
 }
@@ -90,10 +90,36 @@ const Div = styled.div`
     justify-content: center;
     align-items: center;
     padding: 5rem;
+    // border: 1px solid white;
 `
 const FormDiv= styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    // border: 1px solid white;
+`
+const Label = styled.label`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    // border: 1px solid white;
+    padding: 1rem;
+    font-size: 1.5rem;
+`
+const StyledButton = styled.button`
+    background-color: #7cf000;
+    padding: .25rem 2.5rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    margin: 1rem;
+`
+const StyledInput = styled.input`
+    margin: .5rem;
+    padding: .5rem;
+    text-align: center;
+    border: none;
+    border-radius: 99999px;
 `

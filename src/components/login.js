@@ -35,23 +35,24 @@ const Login = () => {
     return(
         <Div>
             <h1> Login </h1>
-            <form onSubmit = { handleSubmit }>
-                <label> Username 
-                    <input 
+            <FormDiv >
+                <Label> Username 
+                    <StyledInput 
                         name = 'username'
                         placeholder = 'Enter username'
                         onChange = { handleChange }
                     />
-                </label>
-                <label> Password 
-                    <input  
+                </Label>
+                <Label> Password 
+                    <StyledInput  
                         name = 'password'
                         placeholder = 'Enter password'
                         onChange = { handleChange }
                     />
-                </label>
-                <button> Submit </button>
-            </form>
+                </Label>
+                
+            </FormDiv>
+            <StyledButton onClick = { handleSubmit }> Submit </StyledButton>
         </Div>
     )
 }
@@ -63,10 +64,37 @@ const Div = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 5rem;
+    // border: 1px solid white;
 `
 const FormDiv= styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    // border: 1px solid white;
+`
+const Label = styled.label`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    // border: 1px solid white;
+    padding: 1rem;
+    font-size: 1.5rem;
+`
+const StyledButton = styled.button`
+    background-color: #7cf000;
+    padding: .25rem 2.5rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    margin: 1rem;
+`
+const StyledInput = styled.input`
+    margin: .5rem;
+    padding: .5rem;
+    text-align: center;
+    border: none;
+    border-radius: 99999px;
 `

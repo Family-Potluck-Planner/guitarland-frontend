@@ -17,9 +17,10 @@ function App() {
   return (
     <AppDiv className="App">
       <StyledNavContainer>
+        <NavH1>GuitarLandia </NavH1>
         <StyledLink to = '/'> Home </StyledLink>
         <StyledLink to = '/login'> Login </StyledLink>
-        <StyledLink to = '/signup'> Signup </StyledLink>
+        <StyledLink to = '/signup'> Sign-Up </StyledLink>
         <StyledLink to = '/guitars'> Guitars </StyledLink>
         <StyledLink to = '/logout'> Logout </StyledLink>
       </StyledNavContainer>
@@ -45,12 +46,21 @@ const AppDiv = styled.div`
 
 const StyledNavContainer = styled.nav`
   padding: 1rem;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #7cf000;
   background-color: black;
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `
 const StyledLink = styled(Link)`
   color: white;
   padding: 1rem;
   text-decoration: none;
+`
+const NavH1 = styled.h1`
+  margin: 0 5rem 0 1rem;
+  font-size: 1.5rem;
+  border: 1px solid white;
+  padding: .25rem 1rem;
+  border-radius: 99999px;
 `
