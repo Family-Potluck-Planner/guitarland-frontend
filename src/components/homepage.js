@@ -16,7 +16,7 @@ const HomePage = () => {
     }
     return(
         <Div>
-            <h1> Guitarlandia </h1>
+            <h1> Welcome to GuitarLandia! </h1>
             <StyledButton onClick = { handleLogin }> Login </StyledButton>
             <StyledButton onClick = { handleSignup }> Sign Up</StyledButton>
         </Div>
@@ -27,8 +27,13 @@ const HomePage = () => {
 export default HomePage;
 
 const StyledButton = styled.button`
+    background-color: ${pr => pr.theme.primaryColor};
+    color: ${pr => pr.theme.secondaryColor};
+    padding: .25rem 2.5rem;
+    border: 1px solid white;
+    border-radius: 99999px;
+    font-size: 1.5rem;
     margin: 1rem;
-    padding: .5rem 1rem;
 `
 const Div = styled.div`
     margin: 5rem;

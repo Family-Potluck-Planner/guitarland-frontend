@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axiosWithAuth from '../axiosWithAuth'
 import { useParams } from 'react-router-dom'
+import styled from 'styled-components';
 
 const Guitar = (props) => {
     const [guitar, setGuitar] = useState({})
@@ -21,13 +22,23 @@ const Guitar = (props) => {
     }, [])
     
     return (
-        <div className='plant'>
+        <StyledDiv className='plant'>
             <p>Brand: {guitar.brand}</p>
             <p>Model: {guitar.model}</p>
             <p>Year: {guitar.year}</p>
             <p>Name: {guitar.name}</p>
-        </div>
+        </StyledDiv>
     )
 }
 
 export default Guitar;
+
+const StyledDiv = styled.div`
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+    padding: 1rem;
+`

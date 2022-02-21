@@ -46,7 +46,7 @@ const AppDiv = styled.div`
 
 const StyledNavContainer = styled.nav`
   padding: 1rem;
-  border-bottom: 1px solid #7cf000;
+  border-bottom: 1px solid ${pr => pr.theme.secondaryColor};
   background-color: black;
   display: flex;
   justify-content: space-between;

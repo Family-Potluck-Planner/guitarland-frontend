@@ -2,6 +2,7 @@ import React, { useState, useEffect} from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import Guitar from './guitar';
+import styled from 'styled-components';
 
 const GuitarList = () => {
     const [ guitars, setGuitars ] = useState([])
@@ -23,13 +24,30 @@ const GuitarList = () => {
     return(
         <div>
             <h1> Guitars </h1>
-            <button onClick = { handleClick }> Add a guitar! </button>
-            {
-                guitars && guitars.map(guitar =>{
-                    return <Guitar guitar = {guitar}/>
-                })
-            }
+            <StyledButton onClick = { handleClick }> Add a guitar! </StyledButton>
+            <StyledDiv>
+                {
+                    guitars && guitars.map(guitar =>{
+                        return <Guitar guitar = {guitar}/>
+                    })
+                }
+            </StyledDiv>
         </div>
     )
 }
 export default GuitarList;
+
+const StyledButton = styled.button`
+    background-color: ${pr => pr.theme.secondaryColor};
+    padding: .25rem 2.5rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    margin: .5rem;
+`
+const StyledDiv = styled.div`
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: center;
+    align-items: center;
+`

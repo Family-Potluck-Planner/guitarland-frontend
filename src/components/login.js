@@ -84,10 +84,11 @@ const Label = styled.label`
     font-size: 1.5rem;
 `
 const StyledButton = styled.button`
-    background-color: #7cf000;
+    background-color: ${pr => pr.theme.primaryColor};
+    color: ${pr => pr.theme.secondaryColor};
     padding: .25rem 2.5rem;
-    border: none;
-    border-radius: 10px;
+    border: 1px solid white;
+    border-radius: 99999px;
     font-size: 1.5rem;
     margin: 1rem;
 `
@@ -97,4 +98,7 @@ const StyledInput = styled.input`
     text-align: center;
     border: none;
     border-radius: 99999px;
+    background-color: ${pr => pr.theme.primaryColor};
+    color: white;
+    border: 1px solid white;
 `
