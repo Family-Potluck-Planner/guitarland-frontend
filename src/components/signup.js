@@ -21,7 +21,7 @@ const SignUp = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('https://guitarlandia.herokuapp.com/api/auth/register', user)
+        axios.post('https://guitarlandia.herokuapp.com/api/auth/signup', user)
         .then(res => {
             setUser(initialUser)
             push('/')
