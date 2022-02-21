@@ -35,7 +35,7 @@ const Login = () => {
     return(
         <Div>
             <h1> Login </h1>
-            <FormDiv onSubmit = { handleSubmit }>
+            <form onSubmit = { handleSubmit }>
                 <label> Username 
                     <input 
                         name = 'username'
@@ -51,7 +51,7 @@ const Login = () => {
                     />
                 </label>
                 <button> Submit </button>
-            </FormDiv>
+            </form>
         </Div>
     )
 }
@@ -63,7 +63,6 @@ const Div = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 5rem;
 `
 const FormDiv= styled.div`
     display: flex;
