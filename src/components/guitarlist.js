@@ -47,7 +47,8 @@ const StyledButton = styled.button`
 `
 const StyledDiv = styled.div`
     display: flex;
-    flex-direction: row wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 `

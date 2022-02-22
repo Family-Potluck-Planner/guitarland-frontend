@@ -42,6 +42,7 @@ const AddGuitar = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         submitGuitar()
+        push('/guitars')
       
     }
 
@@ -109,7 +110,7 @@ const Label = styled.label`
     font-size: 1.5rem;
 `
 const StyledButton = styled.button`
-    background-color: #7cf000;
+    background-color: ${pr => pr.theme.secondaryColor};
     padding: .25rem 2.5rem;
     border: none;
     border-radius: 10px;

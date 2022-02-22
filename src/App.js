@@ -49,7 +49,7 @@ const StyledNavContainer = styled.nav`
   border-bottom: 1px solid ${pr => pr.theme.secondaryColor};
   background-color: black;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 `
 const StyledLink = styled(Link)`
@@ -58,7 +58,7 @@ const StyledLink = styled(Link)`
   text-decoration: none;
 `
 const NavH1 = styled.h1`
-  margin: 0 5rem 0 1rem;
+  margin: 0 5rem 0 0;
   font-size: 1.5rem;
   border: 1px solid white;
   padding: .25rem 1rem;

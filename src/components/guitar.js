@@ -41,4 +41,5 @@ const StyledDiv = styled.div`
     align-items: center;
     margin: 2rem;
     padding: 1rem;
+    background-color: black;
 `
