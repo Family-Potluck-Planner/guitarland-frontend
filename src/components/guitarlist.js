@@ -21,11 +21,14 @@ const GuitarList = () => {
     const handleClick = () => {
         push('/guitars/add')
     }
+    const handleGuitar = () => {
+        push(`/guitar/${guitar_id}`)
+    }
     return(
         <div>
             <h1> Guitars </h1>
             <StyledButton onClick = { handleClick }> Add a guitar! </StyledButton>
-            <StyledDiv>
+            <StyledDiv onClick = { handleGuitar }>
                 {
                     guitars.map(guitar =>{
                         return <Guitar guitar = {guitar}/>
