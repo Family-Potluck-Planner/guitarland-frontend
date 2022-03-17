@@ -22,6 +22,7 @@ const GuitarList = () => {
         push('/guitars/add')
     }
     const handleGuitar = () => {
+        axios.get(`https://guitarlandia.herokuapp.com/api/guitars/${guitar_id}`)
         push(`/guitar/${guitar_id}`)
     }
     return(
