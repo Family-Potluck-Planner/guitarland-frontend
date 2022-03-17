@@ -6,11 +6,11 @@ const HomePage = () => {
     
     let { push }= useHistory()
 
-    const handleLogin = (e) => {
+    const handleLogin = () => {
         push('/login')
     }
 
-    const handleSignup = (e) => {
+    const handleSignup = () => {
         push('/signup')
 
     }
