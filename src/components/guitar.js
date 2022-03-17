@@ -22,7 +22,7 @@ const Guitar = (props) => {
     }, [])
     
     return (
-        <StyledDiv className='plant'>
+        <StyledDiv>
             <p>Brand: {guitar.brand}</p>
             <p>Model: {guitar.model}</p>
             <p>Year: {guitar.year}</p>
