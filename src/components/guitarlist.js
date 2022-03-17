@@ -27,7 +27,7 @@ const GuitarList = () => {
             <StyledButton onClick = { handleClick }> Add a guitar! </StyledButton>
             <StyledDiv>
                 {
-                    guitars && guitars.map(guitar =>{
+                    guitars.map(guitar =>{
                         return <Guitar guitar = {guitar}/>
                     })
                 }
